@@ -7,9 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AASAXUtilLib", "AASAXUtilLi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ISVLicenseGenerator", "ISVLicenseGenerator\ISVLicenseGenerator.csproj", "{789B9C92-8DB0-4B42-AB77-2E1C897B6056}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kabatra.D365.AzureKeyVault", "Kabatra.Azure.KeyVault.CertificateGetter\Kabatra.D365.AzureKeyVault.csproj", "{76D1E382-CA08-4630-ADEA-FA57B89BA6F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kabatra.D365.AzureKeyVault", "Kabatra.D365.AzureKeyVault\Kabatra.D365.AzureKeyVault.csproj", "{76D1E382-CA08-4630-ADEA-FA57B89BA6F1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kabatra.D365.AzureKeyVault.UnitTests", "Kabatra.Azure.KeyVault.CertificateGetter.UnitTests\Kabatra.D365.AzureKeyVault.UnitTests.csproj", "{74A78CB1-40D4-496E-84AA-CACEB4877A7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kabatra.D365.AzureKeyVault.UnitTests", "Kabatra.D365.AzureKeyVault.UnitTests\Kabatra.D365.AzureKeyVault.UnitTests.csproj", "{74A78CB1-40D4-496E-84AA-CACEB4877A7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
