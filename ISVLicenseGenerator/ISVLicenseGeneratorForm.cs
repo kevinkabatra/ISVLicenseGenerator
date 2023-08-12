@@ -6,6 +6,8 @@ using Microsoft.Dynamics.AX.Framework.Tools.ModelManagement;
 using System.Security.Cryptography.X509Certificates;
 using Kabatra.D365.AzureKeyVault;
 using System.Threading.Tasks;
+using System.IO;
+using System.Configuration;
 
 namespace ISVLicenseGeneratorCore
 {
@@ -20,6 +22,12 @@ namespace ISVLicenseGeneratorCore
             config = new AxUtilConfiguration();
 
             config.SignatureVersion = 2;
+
+            AzureKeyVaultUrlTB.Text = ConfigurationManager.AppSettings.Get("AzureKeyVaultURL");
+            AzureKeyVaultTenantIdTB.Text = ConfigurationManager.AppSettings.Get("AzureKeyVaultTenantId");
+            AzureKeyVaultClientIdTB.Text = ConfigurationManager.AppSettings.Get("AzureKeyVaultClientId");
+            AzureKeyVaultClientSecretTB.Text = ConfigurationManager.AppSettings.Get("AzureKeyVaultClientSecret");
+            AzureKeyVaultCertificateTB.Text = ConfigurationManager.AppSettings.Get("AzureKeyVaultCertificate");
         }
 
         private async void GenerateBtn_Click(object sender, EventArgs e)
@@ -173,6 +181,14 @@ namespace ISVLicenseGeneratorCore
                     throw;
                 }
             }
+        }
+
+        private async void DownloadPublicCertificate_Click(object sender, EventArgs e)
+        {
+            var client = new Client(AzureKeyVaultUrlTB.Text, AzureKeyVaultTenantIdTB.Text, AzureKeyVaultClientIdTB.Text, AzureKeyVaultClientSecretTB.Text);
+            var directoryPath = Path.GetDirectoryName(PathTB.Text);
+            var filePath = directoryPath + $"/{AzureKeyVaultCertificateTB.Text}.cer";
+            await client.DownloadPublicCertificate(AzureKeyVaultCertificateTB.Text, filePath);
         }
     }
 }

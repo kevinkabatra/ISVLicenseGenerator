@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Kabatra.Azure.KeyVault.CertificateGetter\Kabatra.D365.AzureKeyVault.csproj" />
+    <ProjectReference Include="..\Kabatra.D365.AzureKeyVault\Kabatra.D365.AzureKeyVault.csproj" />
   </ItemGroup>
 
 </Project>

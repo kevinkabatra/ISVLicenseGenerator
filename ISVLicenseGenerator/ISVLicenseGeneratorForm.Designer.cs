@@ -1,5 +1,6 @@
 ﻿using ISVLicenseGenerator.Properties;
 using Microsoft.VisualBasic.CompilerServices;
+using System.Configuration;
 using System.Windows.Forms.PropertyGridInternal;
 
 namespace ISVLicenseGeneratorCore
@@ -67,6 +68,7 @@ namespace ISVLicenseGeneratorCore
             this.AzureKeyVaultClientSecretTB = new System.Windows.Forms.TextBox();
             this.AzureKeyVaultCertificateTB = new System.Windows.Forms.TextBox();
             this.AzureKeyVaultInstructions = new System.Windows.Forms.Label();
+            this.DownloadPublicCertificate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.UserCount)).BeginInit();
             this.MainMenuStrip.SuspendLayout();
             this.SuspendLayout();
@@ -175,7 +177,6 @@ namespace ISVLicenseGeneratorCore
             this.GenerateBtn.Text = "Generate";
             this.GenerateBtn.UseVisualStyleBackColor = true;
             this.GenerateBtn.Click += new System.EventHandler(this.GenerateBtn_Click);
-
             // 
             // OutputTB
             // 
@@ -345,6 +346,7 @@ namespace ISVLicenseGeneratorCore
             this.AzureKeyVaultUrlTB.Name = "AzureKeyVaultUrlTB";
             this.AzureKeyVaultUrlTB.Size = new System.Drawing.Size(909, 47);
             this.AzureKeyVaultUrlTB.TabIndex = 27;
+            
             // 
             // AzureKeyVaultTenantIdTB
             // 
@@ -389,11 +391,22 @@ namespace ISVLicenseGeneratorCore
     " Vault HSM.\r\nIf using a certificate stored on an USB HSM leave Azure details emp" +
     "ty and click generate.";
             // 
+            // DownloadPublicCertificate
+            // 
+            this.DownloadPublicCertificate.Location = new System.Drawing.Point(409, 1053);
+            this.DownloadPublicCertificate.Name = "DownloadPublicCertificate";
+            this.DownloadPublicCertificate.Size = new System.Drawing.Size(720, 79);
+            this.DownloadPublicCertificate.TabIndex = 33;
+            this.DownloadPublicCertificate.Text = "Download Public Certificate from Azure Key Vault";
+            this.DownloadPublicCertificate.UseVisualStyleBackColor = true;
+            this.DownloadPublicCertificate.Click += new System.EventHandler(this.DownloadPublicCertificate_Click);
+            // 
             // ISVLicenseGeneratorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1409, 1328);
+            this.Controls.Add(this.DownloadPublicCertificate);
             this.Controls.Add(this.AzureKeyVaultInstructions);
             this.Controls.Add(this.AzureKeyVaultCertificateTB);
             this.Controls.Add(this.AzureKeyVaultClientSecretTB);
@@ -473,6 +486,7 @@ namespace ISVLicenseGeneratorCore
         private System.Windows.Forms.TextBox AzureKeyVaultClientSecretTB;
         private System.Windows.Forms.TextBox AzureKeyVaultCertificateTB;
         private System.Windows.Forms.Label AzureKeyVaultInstructions;
+        private System.Windows.Forms.Button DownloadPublicCertificate;
     }
 }
 
