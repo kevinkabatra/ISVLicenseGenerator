@@ -4,6 +4,8 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Microsoft.Dynamics.AX.Framework.Tools.ModelManagement;
 using System.Security.Cryptography.X509Certificates;
+using Kabatra.D365.AzureKeyVault;
+using System.Threading.Tasks;
 
 namespace ISVLicenseGeneratorCore
 {
@@ -20,11 +22,11 @@ namespace ISVLicenseGeneratorCore
             config.SignatureVersion = 2;
         }
 
-        private void GenerateBtn_Click(object sender, EventArgs e)
+        private async void GenerateBtn_Click(object sender, EventArgs e)
         {
             try
             {
-                this.GenerateLicense();
+                await this.GenerateLicense();
             }
             catch (Exception ex)
             {
@@ -35,6 +37,24 @@ namespace ISVLicenseGeneratorCore
         private Boolean ValidateFields()
         {
             return !String.IsNullOrEmpty(PathTB.Text) && !String.IsNullOrEmpty(LicenseCodeTB.Text) && !String.IsNullOrEmpty(CustomerTB.Text) && !String.IsNullOrEmpty(SerialNumberTB.Text);
+        }
+
+        private bool ValidateAzureFields()
+        {
+            if (!string.IsNullOrEmpty(AzureKeyVaultCertificateTB.Text))
+            {
+                if (
+                    string.IsNullOrEmpty(AzureKeyVaultTenantIdTB.Text)
+                    || string.IsNullOrEmpty(AzureKeyVaultClientIdTB.Text)
+                    || string.IsNullOrEmpty(AzureKeyVaultClientSecretTB.Text)
+                    || string.IsNullOrEmpty(AzureKeyVaultUrlTB.Text)
+                )
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         private void BrowseBtn_Click(object sender, EventArgs e)
@@ -53,7 +73,7 @@ namespace ISVLicenseGeneratorCore
             }
         }
 
-        private void GenerateLicense()
+        private async Task GenerateLicense()
         {
             LicenseInfo licenseInfo = new LicenseInfo
             {
@@ -80,20 +100,38 @@ namespace ISVLicenseGeneratorCore
                 throw new System.MissingFieldException("Please fill all mandatory fields.");
             }
 
+            if (!ValidateAzureFields())
+            {
+                var message = "Please fill all Azure Key Vault fields.";
+                MessageBox.Show(message);
+                throw new System.MissingFieldException(message);
+            }
+
             AxUtilContext context = new AxUtilContext();
 
             config.LicenseInfo = licenseInfo;
 
             AxUtil util = new AxUtil(context, config);
 
-            X509Store store = new X509Store("My", StoreLocation.CurrentUser);
-            store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
+            bool result;
+            if (string.IsNullOrEmpty(AzureKeyVaultCertificateTB.Text))
+            {
+                X509Store store = new X509Store("My", StoreLocation.CurrentUser);
+                store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
 
-            X509Certificate2Collection collection = (X509Certificate2Collection)store.Certificates;
-            X509Certificate2Collection fcollection = (X509Certificate2Collection)collection.Find(X509FindType.FindByTimeValid, DateTime.Now, false);
-            X509Certificate2Collection scollection = X509Certificate2UI.SelectFromCollection(fcollection, "Certificate Select", "Select a certificate from the following list to sign the license", X509SelectionFlag.SingleSelection);
+                X509Certificate2Collection collection = (X509Certificate2Collection)store.Certificates;
+                X509Certificate2Collection fcollection = (X509Certificate2Collection)collection.Find(X509FindType.FindByTimeValid, DateTime.Now, false);
+                X509Certificate2Collection scollection = X509Certificate2UI.SelectFromCollection(fcollection, "Certificate Select", "Select a certificate from the following list to sign the license", X509SelectionFlag.SingleSelection);
 
-            Boolean result = util.GenerateLicense(scollection);
+                result = util.GenerateLicense(scollection);
+            }
+            else
+            {
+                var client = new Client(AzureKeyVaultUrlTB.Text, AzureKeyVaultTenantIdTB.Text, AzureKeyVaultClientIdTB.Text, AzureKeyVaultClientSecretTB.Text);
+                var cryptographyClient = await client.GetCryptographyClient(AzureKeyVaultCertificateTB.Text);
+                var publicCertificate = await client.GetPublicCertificate(AzureKeyVaultCertificateTB.Text);
+                result = await util.GenerateLicense(publicCertificate, cryptographyClient);
+            }
 
             if (result == true)
             {

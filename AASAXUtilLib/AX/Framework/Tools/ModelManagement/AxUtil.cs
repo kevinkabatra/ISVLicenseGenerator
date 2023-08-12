@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
+using System.Threading.Tasks;
+using Azure.Security.KeyVault.Keys.Cryptography;
 
 namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
 {
@@ -61,6 +63,12 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
             }
 
             return false;
+        }
+
+        public async Task<bool> GenerateLicense(X509Certificate2 azureKeyVaultCertificate, CryptographyClient cryptographyClient)
+        {
+            var licenseGenerator = new LicenseGenerator(config, context);
+            return await licenseGenerator.GenerateLicense(azureKeyVaultCertificate, cryptographyClient);
         }
 
         private static void ValidateContextNotNull(AxUtilContext context)

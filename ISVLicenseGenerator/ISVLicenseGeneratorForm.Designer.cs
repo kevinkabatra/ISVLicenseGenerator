@@ -32,263 +32,408 @@ namespace ISVLicenseGeneratorCore
         /// </summary>
         private void InitializeComponent()
         {
-            PathTB = new System.Windows.Forms.TextBox();
-            LicenseCodeTB = new System.Windows.Forms.TextBox();
-            CustomerTB = new System.Windows.Forms.TextBox();
-            SerialNumberTB = new System.Windows.Forms.TextBox();
-            PathLbl = new System.Windows.Forms.Label();
-            UserCountLbl = new System.Windows.Forms.Label();
-            ExpirationDateLbl = new System.Windows.Forms.Label();
-            SerialNumberLbl = new System.Windows.Forms.Label();
-            CustomerTenantLbl = new System.Windows.Forms.Label();
-            LicenseCodeLbl = new System.Windows.Forms.Label();
-            GenerateBtn = new System.Windows.Forms.Button();
-            OutputTB = new System.Windows.Forms.TextBox();
-            ResultLbl = new System.Windows.Forms.Label();
-            BrowseBtn = new System.Windows.Forms.Button();
-            saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            ExpirationDatePicker = new System.Windows.Forms.DateTimePicker();
-            UserCount = new System.Windows.Forms.NumericUpDown();
-            MandatoryLbl = new System.Windows.Forms.Label();
-            MainMenuStrip = new System.Windows.Forms.MenuStrip();
-            fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            usageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)UserCount).BeginInit();
-            MainMenuStrip.SuspendLayout();
-            SuspendLayout();
+            this.PathTB = new System.Windows.Forms.TextBox();
+            this.LicenseCodeTB = new System.Windows.Forms.TextBox();
+            this.CustomerTB = new System.Windows.Forms.TextBox();
+            this.SerialNumberTB = new System.Windows.Forms.TextBox();
+            this.PathLbl = new System.Windows.Forms.Label();
+            this.UserCountLbl = new System.Windows.Forms.Label();
+            this.ExpirationDateLbl = new System.Windows.Forms.Label();
+            this.SerialNumberLbl = new System.Windows.Forms.Label();
+            this.CustomerTenantLbl = new System.Windows.Forms.Label();
+            this.LicenseCodeLbl = new System.Windows.Forms.Label();
+            this.GenerateBtn = new System.Windows.Forms.Button();
+            this.OutputTB = new System.Windows.Forms.TextBox();
+            this.ResultLbl = new System.Windows.Forms.Label();
+            this.BrowseBtn = new System.Windows.Forms.Button();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.ExpirationDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.UserCount = new System.Windows.Forms.NumericUpDown();
+            this.MandatoryLbl = new System.Windows.Forms.Label();
+            this.MainMenuStrip = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AzureKeyVaultUrl = new System.Windows.Forms.Label();
+            this.AzureKeyVaultTenantId = new System.Windows.Forms.Label();
+            this.AzureKeyVaultLabel = new System.Windows.Forms.Label();
+            this.AzureKeyVaultClientId = new System.Windows.Forms.Label();
+            this.AzureKeyVaultClientSecret = new System.Windows.Forms.Label();
+            this.AzureKeyVaultCertificate = new System.Windows.Forms.Label();
+            this.AzureKeyVaultUrlTB = new System.Windows.Forms.TextBox();
+            this.AzureKeyVaultTenantIdTB = new System.Windows.Forms.TextBox();
+            this.AzureKeyVaultClientIdTB = new System.Windows.Forms.TextBox();
+            this.AzureKeyVaultClientSecretTB = new System.Windows.Forms.TextBox();
+            this.AzureKeyVaultCertificateTB = new System.Windows.Forms.TextBox();
+            this.AzureKeyVaultInstructions = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.UserCount)).BeginInit();
+            this.MainMenuStrip.SuspendLayout();
+            this.SuspendLayout();
             // 
             // PathTB
             // 
-            PathTB.BackColor = System.Drawing.SystemColors.Control;
-            PathTB.Location = new System.Drawing.Point(217, 45);
-            PathTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            PathTB.Name = "PathTB";
-            PathTB.ReadOnly = true;
-            PathTB.Size = new System.Drawing.Size(330, 27);
-            PathTB.TabIndex = 0;
+            this.PathTB.BackColor = System.Drawing.SystemColors.Control;
+            this.PathTB.Location = new System.Drawing.Point(461, 92);
+            this.PathTB.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.PathTB.Name = "PathTB";
+            this.PathTB.ReadOnly = true;
+            this.PathTB.Size = new System.Drawing.Size(697, 47);
+            this.PathTB.TabIndex = 0;
             // 
             // LicenseCodeTB
             // 
-            LicenseCodeTB.Location = new System.Drawing.Point(217, 80);
-            LicenseCodeTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            LicenseCodeTB.Name = "LicenseCodeTB";
-            LicenseCodeTB.Size = new System.Drawing.Size(430, 27);
-            LicenseCodeTB.TabIndex = 1;
+            this.LicenseCodeTB.Location = new System.Drawing.Point(461, 164);
+            this.LicenseCodeTB.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.LicenseCodeTB.Name = "LicenseCodeTB";
+            this.LicenseCodeTB.Size = new System.Drawing.Size(909, 47);
+            this.LicenseCodeTB.TabIndex = 1;
             // 
             // CustomerTB
             // 
-            CustomerTB.Location = new System.Drawing.Point(217, 115);
-            CustomerTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            CustomerTB.Name = "CustomerTB";
-            CustomerTB.Size = new System.Drawing.Size(430, 27);
-            CustomerTB.TabIndex = 2;
+            this.CustomerTB.Location = new System.Drawing.Point(461, 234);
+            this.CustomerTB.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.CustomerTB.Name = "CustomerTB";
+            this.CustomerTB.Size = new System.Drawing.Size(909, 47);
+            this.CustomerTB.TabIndex = 2;
             // 
             // SerialNumberTB
             // 
-            SerialNumberTB.Location = new System.Drawing.Point(217, 149);
-            SerialNumberTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            SerialNumberTB.Name = "SerialNumberTB";
-            SerialNumberTB.Size = new System.Drawing.Size(430, 27);
-            SerialNumberTB.TabIndex = 3;
+            this.SerialNumberTB.Location = new System.Drawing.Point(461, 304);
+            this.SerialNumberTB.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.SerialNumberTB.Name = "SerialNumberTB";
+            this.SerialNumberTB.Size = new System.Drawing.Size(909, 47);
+            this.SerialNumberTB.TabIndex = 3;
             // 
             // PathLbl
             // 
-            PathLbl.AutoSize = true;
-            PathLbl.Location = new System.Drawing.Point(11, 48);
-            PathLbl.Name = "PathLbl";
-            PathLbl.Size = new System.Drawing.Size(57, 20);
-            PathLbl.TabIndex = 6;
-            PathLbl.Text = "Path (*)";
+            this.PathLbl.AutoSize = true;
+            this.PathLbl.Location = new System.Drawing.Point(23, 98);
+            this.PathLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.PathLbl.Name = "PathLbl";
+            this.PathLbl.Size = new System.Drawing.Size(271, 41);
+            this.PathLbl.TabIndex = 6;
+            this.PathLbl.Text = "Output File Path (*)";
             // 
             // UserCountLbl
             // 
-            UserCountLbl.AutoSize = true;
-            UserCountLbl.Location = new System.Drawing.Point(11, 223);
-            UserCountLbl.Name = "UserCountLbl";
-            UserCountLbl.Size = new System.Drawing.Size(79, 20);
-            UserCountLbl.TabIndex = 8;
-            UserCountLbl.Text = "User count";
+            this.UserCountLbl.AutoSize = true;
+            this.UserCountLbl.Location = new System.Drawing.Point(23, 450);
+            this.UserCountLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.UserCountLbl.Name = "UserCountLbl";
+            this.UserCountLbl.Size = new System.Drawing.Size(162, 41);
+            this.UserCountLbl.TabIndex = 8;
+            this.UserCountLbl.Text = "User count";
             // 
             // ExpirationDateLbl
             // 
-            ExpirationDateLbl.AutoSize = true;
-            ExpirationDateLbl.Location = new System.Drawing.Point(11, 192);
-            ExpirationDateLbl.Name = "ExpirationDateLbl";
-            ExpirationDateLbl.Size = new System.Drawing.Size(110, 20);
-            ExpirationDateLbl.TabIndex = 9;
-            ExpirationDateLbl.Text = "Expiration date";
+            this.ExpirationDateLbl.AutoSize = true;
+            this.ExpirationDateLbl.Location = new System.Drawing.Point(23, 380);
+            this.ExpirationDateLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.ExpirationDateLbl.Name = "ExpirationDateLbl";
+            this.ExpirationDateLbl.Size = new System.Drawing.Size(216, 41);
+            this.ExpirationDateLbl.TabIndex = 9;
+            this.ExpirationDateLbl.Text = "Expiration date";
             // 
             // SerialNumberLbl
             // 
-            SerialNumberLbl.AutoSize = true;
-            SerialNumberLbl.Location = new System.Drawing.Point(11, 153);
-            SerialNumberLbl.Name = "SerialNumberLbl";
-            SerialNumberLbl.Size = new System.Drawing.Size(121, 20);
-            SerialNumberLbl.TabIndex = 10;
-            SerialNumberLbl.Text = "Serial number (*)";
+            this.SerialNumberLbl.AutoSize = true;
+            this.SerialNumberLbl.Location = new System.Drawing.Point(23, 310);
+            this.SerialNumberLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.SerialNumberLbl.Name = "SerialNumberLbl";
+            this.SerialNumberLbl.Size = new System.Drawing.Size(240, 41);
+            this.SerialNumberLbl.TabIndex = 10;
+            this.SerialNumberLbl.Text = "Serial number (*)";
             // 
             // CustomerTenantLbl
             // 
-            CustomerTenantLbl.AutoSize = true;
-            CustomerTenantLbl.Location = new System.Drawing.Point(11, 119);
-            CustomerTenantLbl.Name = "CustomerTenantLbl";
-            CustomerTenantLbl.Size = new System.Drawing.Size(138, 20);
-            CustomerTenantLbl.TabIndex = 11;
-            CustomerTenantLbl.Text = "Customer tenant (*)";
+            this.CustomerTenantLbl.AutoSize = true;
+            this.CustomerTenantLbl.Location = new System.Drawing.Point(23, 240);
+            this.CustomerTenantLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.CustomerTenantLbl.Name = "CustomerTenantLbl";
+            this.CustomerTenantLbl.Size = new System.Drawing.Size(279, 41);
+            this.CustomerTenantLbl.TabIndex = 11;
+            this.CustomerTenantLbl.Text = "Customer tenant (*)";
             // 
             // LicenseCodeLbl
             // 
-            LicenseCodeLbl.AutoSize = true;
-            LicenseCodeLbl.Location = new System.Drawing.Point(11, 83);
-            LicenseCodeLbl.Name = "LicenseCodeLbl";
-            LicenseCodeLbl.Size = new System.Drawing.Size(114, 20);
-            LicenseCodeLbl.TabIndex = 12;
-            LicenseCodeLbl.Text = "License code (*)";
+            this.LicenseCodeLbl.AutoSize = true;
+            this.LicenseCodeLbl.Location = new System.Drawing.Point(23, 170);
+            this.LicenseCodeLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LicenseCodeLbl.Name = "LicenseCodeLbl";
+            this.LicenseCodeLbl.Size = new System.Drawing.Size(228, 41);
+            this.LicenseCodeLbl.TabIndex = 12;
+            this.LicenseCodeLbl.Text = "License code (*)";
             // 
             // GenerateBtn
             // 
-            GenerateBtn.Location = new System.Drawing.Point(544, 256);
-            GenerateBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            GenerateBtn.Name = "GenerateBtn";
-            GenerateBtn.Size = new System.Drawing.Size(103, 40);
-            GenerateBtn.TabIndex = 13;
-            GenerateBtn.Text = "Generate";
-            GenerateBtn.UseVisualStyleBackColor = true;
-            GenerateBtn.Click += GenerateBtn_Click;
+            this.GenerateBtn.Location = new System.Drawing.Point(1156, 1053);
+            this.GenerateBtn.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.GenerateBtn.Name = "GenerateBtn";
+            this.GenerateBtn.Size = new System.Drawing.Size(219, 82);
+            this.GenerateBtn.TabIndex = 13;
+            this.GenerateBtn.Text = "Generate";
+            this.GenerateBtn.UseVisualStyleBackColor = true;
+            this.GenerateBtn.Click += new System.EventHandler(this.GenerateBtn_Click);
+
             // 
             // OutputTB
             // 
-            OutputTB.Enabled = false;
-            OutputTB.Location = new System.Drawing.Point(11, 313);
-            OutputTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            OutputTB.Multiline = true;
-            OutputTB.Name = "OutputTB";
-            OutputTB.ReadOnly = true;
-            OutputTB.Size = new System.Drawing.Size(635, 79);
-            OutputTB.TabIndex = 14;
+            this.OutputTB.Enabled = false;
+            this.OutputTB.Location = new System.Drawing.Point(23, 1143);
+            this.OutputTB.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.OutputTB.Multiline = true;
+            this.OutputTB.Name = "OutputTB";
+            this.OutputTB.ReadOnly = true;
+            this.OutputTB.Size = new System.Drawing.Size(1345, 158);
+            this.OutputTB.TabIndex = 14;
             // 
             // ResultLbl
             // 
-            ResultLbl.AutoSize = true;
-            ResultLbl.Location = new System.Drawing.Point(11, 288);
-            ResultLbl.Name = "ResultLbl";
-            ResultLbl.Size = new System.Drawing.Size(49, 20);
-            ResultLbl.TabIndex = 15;
-            ResultLbl.Text = "Result";
+            this.ResultLbl.AutoSize = true;
+            this.ResultLbl.Location = new System.Drawing.Point(23, 1094);
+            this.ResultLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.ResultLbl.Name = "ResultLbl";
+            this.ResultLbl.Size = new System.Drawing.Size(98, 41);
+            this.ResultLbl.TabIndex = 15;
+            this.ResultLbl.Text = "Result";
             // 
             // BrowseBtn
             // 
-            BrowseBtn.Location = new System.Drawing.Point(553, 43);
-            BrowseBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            BrowseBtn.Name = "BrowseBtn";
-            BrowseBtn.Size = new System.Drawing.Size(94, 29);
-            BrowseBtn.TabIndex = 16;
-            BrowseBtn.Text = "Browse...";
-            BrowseBtn.UseVisualStyleBackColor = true;
-            BrowseBtn.Click += BrowseBtn_Click;
+            this.BrowseBtn.Location = new System.Drawing.Point(1175, 88);
+            this.BrowseBtn.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.BrowseBtn.Name = "BrowseBtn";
+            this.BrowseBtn.Size = new System.Drawing.Size(200, 59);
+            this.BrowseBtn.TabIndex = 16;
+            this.BrowseBtn.Text = "Browse...";
+            this.BrowseBtn.UseVisualStyleBackColor = true;
+            this.BrowseBtn.Click += new System.EventHandler(this.BrowseBtn_Click);
             // 
             // ExpirationDatePicker
             // 
-            ExpirationDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            ExpirationDatePicker.Location = new System.Drawing.Point(217, 185);
-            ExpirationDatePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            ExpirationDatePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            ExpirationDatePicker.Name = "ExpirationDatePicker";
-            ExpirationDatePicker.Size = new System.Drawing.Size(430, 27);
-            ExpirationDatePicker.TabIndex = 17;
-            ExpirationDatePicker.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.ExpirationDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.ExpirationDatePicker.Location = new System.Drawing.Point(461, 374);
+            this.ExpirationDatePicker.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.ExpirationDatePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.ExpirationDatePicker.Name = "ExpirationDatePicker";
+            this.ExpirationDatePicker.Size = new System.Drawing.Size(909, 47);
+            this.ExpirationDatePicker.TabIndex = 17;
+            this.ExpirationDatePicker.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             // 
             // UserCount
             // 
-            UserCount.Location = new System.Drawing.Point(217, 219);
-            UserCount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            UserCount.Maximum = new decimal(new int[] { int.MaxValue, 0, 0, 0 });
-            UserCount.Name = "UserCount";
-            UserCount.Size = new System.Drawing.Size(430, 27);
-            UserCount.TabIndex = 18;
+            this.UserCount.Location = new System.Drawing.Point(461, 444);
+            this.UserCount.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.UserCount.Maximum = new decimal(new int[] {
+            2147483647,
+            0,
+            0,
+            0});
+            this.UserCount.Name = "UserCount";
+            this.UserCount.Size = new System.Drawing.Size(914, 47);
+            this.UserCount.TabIndex = 18;
             // 
             // MandatoryLbl
             // 
-            MandatoryLbl.AutoSize = true;
-            MandatoryLbl.Location = new System.Drawing.Point(6, 256);
-            MandatoryLbl.Name = "MandatoryLbl";
-            MandatoryLbl.Size = new System.Drawing.Size(145, 20);
-            MandatoryLbl.TabIndex = 19;
-            MandatoryLbl.Text = " (*) Mandatory fields";
+            this.MandatoryLbl.AutoSize = true;
+            this.MandatoryLbl.Location = new System.Drawing.Point(23, 1027);
+            this.MandatoryLbl.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.MandatoryLbl.Name = "MandatoryLbl";
+            this.MandatoryLbl.Size = new System.Drawing.Size(288, 41);
+            this.MandatoryLbl.TabIndex = 19;
+            this.MandatoryLbl.Text = " (*) Mandatory fields";
             // 
             // MainMenuStrip
             // 
-            MainMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            MainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, helpToolStripMenuItem });
-            MainMenuStrip.Location = new System.Drawing.Point(0, 0);
-            MainMenuStrip.Name = "MainMenuStrip";
-            MainMenuStrip.Padding = new System.Windows.Forms.Padding(6, 3, 0, 3);
-            MainMenuStrip.Size = new System.Drawing.Size(663, 30);
-            MainMenuStrip.TabIndex = 20;
-            MainMenuStrip.Text = "menuStrip1";
+            this.MainMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.MainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.MainMenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MainMenuStrip.Name = "MainMenuStrip";
+            this.MainMenuStrip.Padding = new System.Windows.Forms.Padding(13, 6, 0, 6);
+            this.MainMenuStrip.Size = new System.Drawing.Size(1409, 57);
+            this.MainMenuStrip.TabIndex = 20;
+            this.MainMenuStrip.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
-            fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { exitToolStripMenuItem });
-            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
-            fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(87, 45);
+            this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
             // 
-            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new System.Drawing.Size(116, 26);
-            exitToolStripMenuItem.Text = "Exit";
-            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(230, 54);
+            this.exitToolStripMenuItem.Text = "Exit";
             // 
             // helpToolStripMenuItem
             // 
-            helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { usageToolStripMenuItem });
-            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
-            helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.usageToolStripMenuItem});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(104, 45);
+            this.helpToolStripMenuItem.Text = "Help";
             // 
             // usageToolStripMenuItem
             // 
-            usageToolStripMenuItem.Name = "usageToolStripMenuItem";
-            usageToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
-            usageToolStripMenuItem.Text = "Usage";
-            usageToolStripMenuItem.Click += usageToolStripMenuItem_Click;
+            this.usageToolStripMenuItem.Name = "usageToolStripMenuItem";
+            this.usageToolStripMenuItem.Size = new System.Drawing.Size(267, 54);
+            this.usageToolStripMenuItem.Text = "Usage";
+            // 
+            // AzureKeyVaultUrl
+            // 
+            this.AzureKeyVaultUrl.AutoSize = true;
+            this.AzureKeyVaultUrl.Location = new System.Drawing.Point(62, 570);
+            this.AzureKeyVaultUrl.Name = "AzureKeyVaultUrl";
+            this.AzureKeyVaultUrl.Size = new System.Drawing.Size(201, 41);
+            this.AzureKeyVaultUrl.TabIndex = 21;
+            this.AzureKeyVaultUrl.Text = "Key Vault URL";
+            // 
+            // AzureKeyVaultTenantId
+            // 
+            this.AzureKeyVaultTenantId.AutoSize = true;
+            this.AzureKeyVaultTenantId.Location = new System.Drawing.Point(62, 640);
+            this.AzureKeyVaultTenantId.Name = "AzureKeyVaultTenantId";
+            this.AzureKeyVaultTenantId.Size = new System.Drawing.Size(140, 41);
+            this.AzureKeyVaultTenantId.TabIndex = 22;
+            this.AzureKeyVaultTenantId.Text = "Tenant Id";
+            // 
+            // AzureKeyVaultLabel
+            // 
+            this.AzureKeyVaultLabel.AutoSize = true;
+            this.AzureKeyVaultLabel.Location = new System.Drawing.Point(23, 520);
+            this.AzureKeyVaultLabel.Name = "AzureKeyVaultLabel";
+            this.AzureKeyVaultLabel.Size = new System.Drawing.Size(224, 41);
+            this.AzureKeyVaultLabel.TabIndex = 23;
+            this.AzureKeyVaultLabel.Text = "Azure Key Vault";
+            // 
+            // AzureKeyVaultClientId
+            // 
+            this.AzureKeyVaultClientId.AutoSize = true;
+            this.AzureKeyVaultClientId.Location = new System.Drawing.Point(62, 710);
+            this.AzureKeyVaultClientId.Name = "AzureKeyVaultClientId";
+            this.AzureKeyVaultClientId.Size = new System.Drawing.Size(128, 41);
+            this.AzureKeyVaultClientId.TabIndex = 24;
+            this.AzureKeyVaultClientId.Text = "Client Id";
+            // 
+            // AzureKeyVaultClientSecret
+            // 
+            this.AzureKeyVaultClientSecret.AutoSize = true;
+            this.AzureKeyVaultClientSecret.Location = new System.Drawing.Point(62, 780);
+            this.AzureKeyVaultClientSecret.Name = "AzureKeyVaultClientSecret";
+            this.AzureKeyVaultClientSecret.Size = new System.Drawing.Size(184, 41);
+            this.AzureKeyVaultClientSecret.TabIndex = 25;
+            this.AzureKeyVaultClientSecret.Text = "Client Secret";
+            // 
+            // AzureKeyVaultCertificate
+            // 
+            this.AzureKeyVaultCertificate.AutoSize = true;
+            this.AzureKeyVaultCertificate.Location = new System.Drawing.Point(62, 850);
+            this.AzureKeyVaultCertificate.Name = "AzureKeyVaultCertificate";
+            this.AzureKeyVaultCertificate.Size = new System.Drawing.Size(238, 41);
+            this.AzureKeyVaultCertificate.TabIndex = 26;
+            this.AzureKeyVaultCertificate.Text = "Certificate Name";
+            // 
+            // AzureKeyVaultUrlTB
+            // 
+            this.AzureKeyVaultUrlTB.Location = new System.Drawing.Point(461, 564);
+            this.AzureKeyVaultUrlTB.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.AzureKeyVaultUrlTB.Name = "AzureKeyVaultUrlTB";
+            this.AzureKeyVaultUrlTB.Size = new System.Drawing.Size(909, 47);
+            this.AzureKeyVaultUrlTB.TabIndex = 27;
+            // 
+            // AzureKeyVaultTenantIdTB
+            // 
+            this.AzureKeyVaultTenantIdTB.Location = new System.Drawing.Point(461, 634);
+            this.AzureKeyVaultTenantIdTB.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.AzureKeyVaultTenantIdTB.Name = "AzureKeyVaultTenantIdTB";
+            this.AzureKeyVaultTenantIdTB.Size = new System.Drawing.Size(909, 47);
+            this.AzureKeyVaultTenantIdTB.TabIndex = 28;
+            // 
+            // AzureKeyVaultClientIdTB
+            // 
+            this.AzureKeyVaultClientIdTB.Location = new System.Drawing.Point(461, 704);
+            this.AzureKeyVaultClientIdTB.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.AzureKeyVaultClientIdTB.Name = "AzureKeyVaultClientIdTB";
+            this.AzureKeyVaultClientIdTB.Size = new System.Drawing.Size(909, 47);
+            this.AzureKeyVaultClientIdTB.TabIndex = 29;
+            // 
+            // AzureKeyVaultClientSecretTB
+            // 
+            this.AzureKeyVaultClientSecretTB.Location = new System.Drawing.Point(461, 774);
+            this.AzureKeyVaultClientSecretTB.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.AzureKeyVaultClientSecretTB.Name = "AzureKeyVaultClientSecretTB";
+            this.AzureKeyVaultClientSecretTB.Size = new System.Drawing.Size(909, 47);
+            this.AzureKeyVaultClientSecretTB.TabIndex = 30;
+            // 
+            // AzureKeyVaultCertificateTB
+            // 
+            this.AzureKeyVaultCertificateTB.Location = new System.Drawing.Point(461, 844);
+            this.AzureKeyVaultCertificateTB.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.AzureKeyVaultCertificateTB.Name = "AzureKeyVaultCertificateTB";
+            this.AzureKeyVaultCertificateTB.Size = new System.Drawing.Size(909, 47);
+            this.AzureKeyVaultCertificateTB.TabIndex = 31;
+            // 
+            // AzureKeyVaultInstructions
+            // 
+            this.AzureKeyVaultInstructions.AutoSize = true;
+            this.AzureKeyVaultInstructions.Location = new System.Drawing.Point(75, 917);
+            this.AzureKeyVaultInstructions.Name = "AzureKeyVaultInstructions";
+            this.AzureKeyVaultInstructions.Size = new System.Drawing.Size(1187, 82);
+            this.AzureKeyVaultInstructions.TabIndex = 32;
+            this.AzureKeyVaultInstructions.Text = "Note: Fill out Azure Key Vault details if using a certificate stored in Azure Key" +
+    " Vault HSM.\r\nIf using a certificate stored on an USB HSM leave Azure details emp" +
+    "ty and click generate.";
             // 
             // ISVLicenseGeneratorForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(663, 412);
-            Controls.Add(MandatoryLbl);
-            Controls.Add(UserCount);
-            Controls.Add(ExpirationDatePicker);
-            Controls.Add(BrowseBtn);
-            Controls.Add(ResultLbl);
-            Controls.Add(OutputTB);
-            Controls.Add(GenerateBtn);
-            Controls.Add(LicenseCodeLbl);
-            Controls.Add(CustomerTenantLbl);
-            Controls.Add(SerialNumberLbl);
-            Controls.Add(ExpirationDateLbl);
-            Controls.Add(UserCountLbl);
-            Controls.Add(PathLbl);
-            Controls.Add(SerialNumberTB);
-            Controls.Add(CustomerTB);
-            Controls.Add(LicenseCodeTB);
-            Controls.Add(PathTB);
-            Controls.Add(MainMenuStrip);
-            Icon = Resources.Icon;
-            Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            Name = "ISVLicenseGeneratorForm";
-            Text = "ISV License Generator";
-            ((System.ComponentModel.ISupportInitialize)UserCount).EndInit();
-            MainMenuStrip.ResumeLayout(false);
-            MainMenuStrip.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 41F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1409, 1328);
+            this.Controls.Add(this.AzureKeyVaultInstructions);
+            this.Controls.Add(this.AzureKeyVaultCertificateTB);
+            this.Controls.Add(this.AzureKeyVaultClientSecretTB);
+            this.Controls.Add(this.AzureKeyVaultClientIdTB);
+            this.Controls.Add(this.AzureKeyVaultTenantIdTB);
+            this.Controls.Add(this.AzureKeyVaultUrlTB);
+            this.Controls.Add(this.AzureKeyVaultCertificate);
+            this.Controls.Add(this.AzureKeyVaultClientSecret);
+            this.Controls.Add(this.AzureKeyVaultClientId);
+            this.Controls.Add(this.AzureKeyVaultLabel);
+            this.Controls.Add(this.AzureKeyVaultTenantId);
+            this.Controls.Add(this.AzureKeyVaultUrl);
+            this.Controls.Add(this.MandatoryLbl);
+            this.Controls.Add(this.UserCount);
+            this.Controls.Add(this.ExpirationDatePicker);
+            this.Controls.Add(this.BrowseBtn);
+            this.Controls.Add(this.ResultLbl);
+            this.Controls.Add(this.OutputTB);
+            this.Controls.Add(this.GenerateBtn);
+            this.Controls.Add(this.LicenseCodeLbl);
+            this.Controls.Add(this.CustomerTenantLbl);
+            this.Controls.Add(this.SerialNumberLbl);
+            this.Controls.Add(this.ExpirationDateLbl);
+            this.Controls.Add(this.UserCountLbl);
+            this.Controls.Add(this.PathLbl);
+            this.Controls.Add(this.SerialNumberTB);
+            this.Controls.Add(this.CustomerTB);
+            this.Controls.Add(this.LicenseCodeTB);
+            this.Controls.Add(this.PathTB);
+            this.Controls.Add(this.MainMenuStrip);
+            this.Icon = global::ISVLicenseGenerator.Properties.Resources.Icon;
+            this.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.Name = "ISVLicenseGeneratorForm";
+            this.Text = "ISV License Generator";
+            ((System.ComponentModel.ISupportInitialize)(this.UserCount)).EndInit();
+            this.MainMenuStrip.ResumeLayout(false);
+            this.MainMenuStrip.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
@@ -316,6 +461,18 @@ namespace ISVLicenseGeneratorCore
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usageToolStripMenuItem;
+        private System.Windows.Forms.Label AzureKeyVaultUrl;
+        private System.Windows.Forms.Label AzureKeyVaultTenantId;
+        private System.Windows.Forms.Label AzureKeyVaultLabel;
+        private System.Windows.Forms.Label AzureKeyVaultClientId;
+        private System.Windows.Forms.Label AzureKeyVaultClientSecret;
+        private System.Windows.Forms.Label AzureKeyVaultCertificate;
+        private System.Windows.Forms.TextBox AzureKeyVaultUrlTB;
+        private System.Windows.Forms.TextBox AzureKeyVaultTenantIdTB;
+        private System.Windows.Forms.TextBox AzureKeyVaultClientIdTB;
+        private System.Windows.Forms.TextBox AzureKeyVaultClientSecretTB;
+        private System.Windows.Forms.TextBox AzureKeyVaultCertificateTB;
+        private System.Windows.Forms.Label AzureKeyVaultInstructions;
     }
 }
 

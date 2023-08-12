@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AASAXUtilLib\AASAXUtilLib.csproj" />
+    <ProjectReference Include="..\Kabatra.Azure.KeyVault.CertificateGetter\Kabatra.D365.AzureKeyVault.csproj" />
   </ItemGroup>
 
   <ItemGroup>

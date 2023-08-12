@@ -1,4 +1,5 @@
-﻿using Microsoft.Dynamics.AX.Framework.Tools.ModelManagement.Properties;
+﻿using Azure.Security.KeyVault.Keys.Cryptography;
+using Microsoft.Dynamics.AX.Framework.Tools.ModelManagement.Properties;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
@@ -76,6 +78,12 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
             return certificate != null && this.GenerateLicenseFile(this.GenerateSignature(certificate), certificate);
         }
 
+        internal async Task<bool> GenerateLicense(X509Certificate2 azureKeyVaultCertificate, CryptographyClient cryptographyClient)
+        {
+            var signature = await GenerateSignature(cryptographyClient);
+            return cryptographyClient != null && GenerateLicenseFile(signature, azureKeyVaultCertificate);
+        }
+
         private bool ValidateCertificate(X509Certificate2 certificate)
         {
             if (certificate.HasPrivateKey)
@@ -135,7 +143,7 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
 
         private string GenerateSignature(X509Certificate2 certificate)
         {
-            byte[] bytes = new UnicodeEncoding().GetBytes((this.licenseInfo.Customer + this.licenseInfo.SerialNumber + this.formattedDate + this.licenseInfo.LicenseCode + this.formattedUserCount + this.formattedTimestamp).ToUpperInvariant());            
+            var bytes = GetSignatureBytes();
             RSA rsa = certificate.GetRSAPrivateKey();            
             byte[] numArray1 = this.SignData(rsa, bytes);
             byte[] inArray = new byte[((IEnumerable<byte>)numArray1).Count<byte>() + 1];
@@ -148,6 +156,19 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
             foreach (byte num4 in ((IEnumerable<byte>)numArray1).Reverse<byte>())
                 inArray[num2++] = num4;
             return Convert.ToBase64String(inArray);
+        }
+
+        private async Task<string> GenerateSignature(CryptographyClient cryptographyClient)
+        {
+            var bytes = GetSignatureBytes();
+            var encyrptionResult = await cryptographyClient.EncryptAsync(EncryptionAlgorithm.RsaOaep, bytes);
+            return Convert.ToBase64String(encyrptionResult.Ciphertext);
+        }
+
+        private byte[] GetSignatureBytes()
+        {
+            byte[] bytes = new UnicodeEncoding().GetBytes((this.licenseInfo.Customer + this.licenseInfo.SerialNumber + this.formattedDate + this.licenseInfo.LicenseCode + this.formattedUserCount + this.formattedTimestamp).ToUpperInvariant());
+            return bytes;
         }
 
         private byte[] SignData(RSA rsa, byte[] data)
