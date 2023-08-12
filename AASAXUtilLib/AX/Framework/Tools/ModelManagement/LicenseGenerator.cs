@@ -161,8 +161,9 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
         private async Task<string> GenerateSignature(CryptographyClient cryptographyClient)
         {
             var bytes = GetSignatureBytes();
-            var encyrptionResult = await cryptographyClient.EncryptAsync(EncryptionAlgorithm.RsaOaep, bytes);
-            return Convert.ToBase64String(encyrptionResult.Ciphertext);
+            var digest = SHA384.HashData(bytes);
+            var generateSignatureResult = await cryptographyClient.SignAsync(SignatureAlgorithm.RS384, digest);
+            return BitConverter.ToString(generateSignatureResult.Signature);
         }
 
         private byte[] GetSignatureBytes()
