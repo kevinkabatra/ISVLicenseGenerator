@@ -341,5 +341,3 @@ healthchecksdb
 
 README.md
 LICENSE.md
-./Kabatra.D365.AzureKeyVault.UnitTests/Constants.cs
-./ISVLicenseGenerator/ISVLicenseGenerator/App.config
